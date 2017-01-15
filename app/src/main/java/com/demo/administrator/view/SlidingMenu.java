@@ -12,6 +12,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.demo.administrator.dxweather.R;
+import com.demo.administrator.util.LogUtil;
 import com.nineoldandroids.view.ViewHelper;
 
 public class SlidingMenu extends HorizontalScrollView {
@@ -23,6 +24,7 @@ public class SlidingMenu extends HorizontalScrollView {
     private int mMenuRightPadding = 50;
     private boolean isOpen;
     private boolean once;
+    private String tag = "TAG";
 
 
     /**
@@ -75,7 +77,7 @@ public class SlidingMenu extends HorizontalScrollView {
             mContent = (ViewGroup) mWaper.getChildAt(1);
             mMenu.getLayoutParams().width = mScreenWidth - mMenuRightPadding;
             mContent.getLayoutParams().width = mScreenWidth;
-            mMenuWidth =mScreenWidth - mMenuRightPadding;
+            mMenuWidth = mScreenWidth - mMenuRightPadding;
             once = true;
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -83,7 +85,7 @@ public class SlidingMenu extends HorizontalScrollView {
 
 
     /**
-     *将Menu隐藏于左侧
+     * 将Menu隐藏于左侧
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -102,9 +104,11 @@ public class SlidingMenu extends HorizontalScrollView {
                 if (scrollX >= mMenuWidth / 2) {
                     this.smoothScrollTo(mMenuWidth, 0);
                     isOpen = false;
+                    LogUtil.v(tag, "onTouchEventclose");
                 } else {
                     this.smoothScrollTo(0, 0);
                     isOpen = true;
+                    LogUtil.v(tag, "onTouchEventopen");
                 }
         }
         return super.onTouchEvent(ev);
@@ -119,6 +123,7 @@ public class SlidingMenu extends HorizontalScrollView {
             return;
         this.smoothScrollTo(0, 0);
         isOpen = true;
+        LogUtil.v(tag, "openMenu");
     }
 
 
@@ -130,6 +135,7 @@ public class SlidingMenu extends HorizontalScrollView {
             return;
         this.smoothScrollTo(mMenuWidth, 0);
         isOpen = false;
+        LogUtil.v(tag, "closeMenu");
     }
 
 
@@ -146,12 +152,12 @@ public class SlidingMenu extends HorizontalScrollView {
 
 
     /**
-     *设置拖动时的动画
+     * 设置拖动时的动画
      */
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        float scale = 1 * 1.0f / mMenuWidth;
+        float scale = l * 1.0f / mMenuWidth;
         float rightScale = 0.7f + 0.3f * scale;
         float leftScale = 1.0f - scale * 0.3f;
         float leftAlpha = 0.6f + 0.4f * (1 - scale);
@@ -163,6 +169,8 @@ public class SlidingMenu extends HorizontalScrollView {
         ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
         ViewHelper.setScaleX(mContent, rightScale);
         ViewHelper.setScaleY(mContent, rightScale);
+
+        LogUtil.v(tag, "onSrollChanged");
     }
 }
 
