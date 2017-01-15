@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DXWeather</string>
+    <string name="btn_name">切换菜单</string>
+    <string name="first_item">第一个item</string>
+    <string name="second_item">第二个item</string>
+    <string name="three_item">第三个item</string>
+    <string name="four_item">第四个item</string>
+    <string name="five_item">第五个item</string>
+
 </resources>
