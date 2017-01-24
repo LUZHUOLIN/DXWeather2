@@ -10,9 +10,8 @@
         android:id="@+id/left_Menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/img_frame_background"
+        android:background="@color/colorPrimaryDark"
         lzl:rightPadding="80dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,14 +22,36 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark">
+                android:orientation="vertical"
+                android:background="@android:color/background_light">
 
-                <Button
-                    android:id="@+id/btn_toggle"
-                    android:layout_width="wrap_content"
+
+                <FrameLayout
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:onClick="toggleMenu"
-                    android:text="@string/btn_name" />
+                    android:background="#484E61">
+
+                    <TextView
+                        android:id="@+id/text_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#fff"
+                        android:textSize="24sp" />
+                    <Button
+                        android:id="@+id/btn_toggle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="toggleMenu"
+                        android:text="@string/btn_name" />
+                </FrameLayout>
+
+                <ListView
+                    android:id="@+id/list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></ListView>
             </LinearLayout>
         </LinearLayout>
 

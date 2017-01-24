@@ -95,6 +95,18 @@ public class SlidingMenu extends HorizontalScrollView {
         }
     }
 
+    /**
+     * 切换菜单
+     */
+    public void toggle() {
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         int action = ev.getAction();
@@ -136,18 +148,6 @@ public class SlidingMenu extends HorizontalScrollView {
         this.smoothScrollTo(mMenuWidth, 0);
         isOpen = false;
         LogUtil.v(tag, "closeMenu");
-    }
-
-
-    /**
-     * 切换菜单
-     */
-    public void toggle() {
-        if (isOpen) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
     }
 
 

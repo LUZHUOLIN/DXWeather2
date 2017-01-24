@@ -4,9 +4,9 @@ package com.demo.administrator.model;
 
 public class County {
     private int id;
-    private String countyname;
-    private String countycode;
-    private int cityid;
+    private String countyName;
+    private String countyCode;
+    private int cityId;
 
     public int getId() {
         return id;
@@ -16,27 +16,27 @@ public class County {
         this.id = id;
     }
 
-    public String getCountyname() {
-        return countyname;
+    public String getCountyName() {
+        return countyName;
     }
 
-    public void setCountyname(String countyname) {
-        this.countyname = countyname;
+    public void setCountyName(String countyName) {
+        this.countyName = countyName;
     }
 
-    public String getCountycode() {
-        return countycode;
+    public String getCountyCode() {
+        return countyCode;
     }
 
-    public void setCountycode(String countycode) {
-        this.countycode = countycode;
+    public void setCountyCode(String countyCode) {
+        this.countyCode = countyCode;
     }
 
-    public int getCityid() {
-        return cityid;
+    public int getCityId() {
+        return cityId;
     }
 
-    public void setCityid(int cityid) {
-        this.cityid = cityid;
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 }

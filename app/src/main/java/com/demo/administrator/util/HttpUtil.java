@@ -31,7 +31,7 @@ public class HttpUtil {
                     in.close();
                     reader.close();
                     if (listener != null) {
-                        listener.onFinsh(response.toString());
+                        listener.onFinish(response.toString());
                     }
                 } catch (IOException e) {
                     if (listener!=null){

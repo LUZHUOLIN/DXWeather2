@@ -26,8 +26,8 @@ public class Utility {
                 for (String p : allProvinces) {
                     String[] arry = p.split("\\|");
                     Province province = new Province();
-                    province.setProvincecode(arry[0]);
-                    province.setProvincename(arry[1]);
+                    province.setProvinceCode(arry[0]);
+                    province.setProvinceName(arry[1]);
                     dxWeatherDB.saveProvince(province);
                 }
                 return true;
@@ -43,9 +43,9 @@ public class Utility {
                 for (String c : allCitys) {
                     String[] arry = c.split("\\|");
                     City city = new City();
-                    city.setCitycode(arry[0]);
-                    city.setCityname(arry[1]);
-                    city.setProvinceid(provinceid);
+                    city.setCityCode(arry[0]);
+                    city.setCityName(arry[1]);
+                    city.setProvinceId(provinceid);
                     dxWeatherDB.saveCity(city);
                 }
                 return true;
@@ -62,9 +62,9 @@ public class Utility {
                 for (String c : allCountys) {
                     String[] arry = c.split("\\|");
                     County county = new County();
-                    county.setCountycode(arry[0]);
-                    county.setCountyname(arry[1]);
-                    county.setCityid(cityid);
+                    county.setCountyCode(arry[0]);
+                    county.setCountyName(arry[1]);
+                    county.setCityId(cityid);
                     dxWeatherDB.saveCounty(county);
                 }
                 return true;
@@ -93,7 +93,7 @@ public class Utility {
 
     private static void saveWeatherInfo(Context context, String cityName, String weaherCode, String temp1, String temp2, String weatherDesp,
                                 String publishTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy骞碝鏈坉鏃�", Locale.CHINA);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年M月d日", Locale.CHINA);
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.putBoolean("city_selected", true);
         editor.putString("city_name", cityName);

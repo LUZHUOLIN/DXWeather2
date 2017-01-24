@@ -6,9 +6,9 @@ import java.lang.ref.SoftReference;
 public class City {
 
     private int id;
-    private String cityname;
-    private String citycode;
-    private int provinceid;
+    private String cityName;
+    private String cityCode;
+    private int provinceId;
 
     public int getId() {
         return id;
@@ -18,27 +18,27 @@ public class City {
         this.id = id;
     }
 
-    public String getCityname() {
-        return cityname;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
-    public String getCitycode() {
-        return citycode;
+    public String getCityCode() {
+        return cityCode;
     }
 
-    public void setCitycode(String citycode) {
-        this.citycode = citycode;
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
     }
 
-    public int getProvinceid() {
-        return provinceid;
+    public int getProvinceId() {
+        return provinceId;
     }
 
-    public void setProvinceid(int provinceid) {
-        this.provinceid = provinceid;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
 }
